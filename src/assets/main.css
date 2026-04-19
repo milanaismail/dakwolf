@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #161616;
+  font-family: 'Manrope', sans-serif;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+@layer components{
+    .card {
+        @apply bg-white p-8 rounded-lg ;
+    }
+    .button-primary {
+        @apply bg-[#22385F] text-white px-6 py-3 rounded-full w-fit;
+    }
+    .img-card {
+        @apply w-full h-full object-cover rounded-lg;
+    }
+    .input-field {
+        @apply rounded-full bg-white  px-6 py-3 w-full text-black;
+    }
+     .button-secondary {
+        @apply bg-[#b1bdcf] text-[#22385F] px-6 py-3 rounded-full w-fit;
+    }
+}
+
+@layer base {
+  h2 {
+    @apply text-[#22385F];
+  }
+
+}
