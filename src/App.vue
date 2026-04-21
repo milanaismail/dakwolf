@@ -1,35 +1,64 @@
 <script setup lang="ts">
-import { House, Paintbrush, Wind, Star, Quote, Phone, Mail } from '@lucide/vue'
+import { ref } from 'vue'
+import { House, Paintbrush, Wind, Star, Quote, Phone, Mail, Menu, X } from '@lucide/vue'
+
+const mobileNavOpen = ref(false)
 </script>
 
 <template>
-  <header class="grid grid-cols-3 w-full px-8 py-4 items-center">
+  <header class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 py-4 items-center">
     <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
-    <div class="grid grid-cols-4 items-center justify-between w-full">
-      <a href="" class="text-center">Home</a>
-      <a href="" class="text-center">Diensten</a>
-      <a href="" class="text-center">Over ons</a>
-      <a href="" class="text-center">Contact</a>
+    <!-- Desktop nav -->
+    <div class="hidden md:grid grid-cols-4 gap-2 items-center justify-between w-full">
+      <a href="#" class="text-center">Home</a>
+      <a href="#diensten" class="text-center">Diensten</a>
+      <a href="#overons" class="text-center">Over ons</a>
+      <a href="#contact" class="text-center">Contact</a>
     </div>
-    <button class="ml-auto button-primary">Bel nu</button>
+    <button class="ml-auto button-primary hidden md:block">Bel nu</button>
+
+    <!-- Mobile hamburger -->
+    <button class="ml-auto md:hidden" @click="mobileNavOpen = true" aria-label="Open menu">
+      <Menu class="size-8" />
+    </button>
+
+  <!-- Mobile nav drawer -->
+  <transition name="fade">
+    <div v-if="mobileNavOpen" class="fixed inset-0 z-50 bg-black/40 flex justify-end">
+      <div class="flex-1" @click="mobileNavOpen = false"></div>
+      <nav class="bg-white w-3/4 max-w-xs h-full p-6 flex flex-col gap-6 shadow-lg animate-slideInRight">
+          <button class="absolute right-6 top-6" @click="mobileNavOpen = false" aria-label="Sluit menu">
+            <X class="size-7" />
+          </button>
+        <a href="#" class="py-2 text-lg" @click="mobileNavOpen = false">Home</a>
+        <a href="#diensten" class="py-2 text-lg" @click="mobileNavOpen = false">Diensten</a>
+        <a href="#overons" class="py-2 text-lg" @click="mobileNavOpen = false">Over ons</a>
+        <a href="#contact" class="py-2 text-lg" @click="mobileNavOpen = false">Contact</a>
+        <button class="button-primary mt-8" @click="mobileNavOpen = false">Bel nu</button>
+      </nav>
+    </div>
+  </transition>
+
   </header>
 
-  <section class="grid grid-cols-2 w-full px-8 py-16 items-center gap-8">
-    <div class="flex flex-col gap-4">
-      <h1 class="text-5xl font-bold">Wij maken van uw huis een thuis</h1>
-      <p class="text-lg">Met vakmanschap in dakreparatie, isolatie en schilderwerken.</p>
-      <button class="button-primary">Vraag offerte aan</button>
+  <section class="grid grid-cols-1 md:grid-cols-2 reverse-col  w-full px-8 py-16 items-center gap-8">
+    <div class="flex items-center md:items-start  flex-col gap-4 order-2 md:order-1">
+      <h1 class="text-5xl font-bold text-center md:text-left">Dakwerken, isolatie en schilderwerken in Leuven
+</h1>
+      <p class="text-lg">Vakmanschap voor renovatie en herstellingen.
+</p>
+      <button class="button-primary ">Vraag offerte aan</button>
     </div>
     <img
-      class="rounded-lg shadow-sm object-cover aspect-square"
+      class="rounded-lg shadow-sm object-cover aspect-square order-1 md:order-2"
       src="./assets/hero-background.jpeg"
       alt="Hero image"
     />
   </section>
   <section class="px-8 py-16">
     <h2 >Diensten</h2>
-    <div class="grid grid-cols-3 gap-4">
-      <div class="card grid grid-rows-2">
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="card flex flex-col gap-4">
         <div>
 
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3"><Wind class="size-6 text-[#22385F]" /></div>
@@ -43,7 +72,7 @@ import { House, Paintbrush, Wind, Star, Quote, Phone, Mail } from '@lucide/vue'
         </div>  
 
         </div>
-       <div class="card grid grid-rows-2">
+       <div class="card flex flex-col gap-4">
         <div>
 
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3"><House class="size-6 text-[#22385F]" /></div>
@@ -56,7 +85,7 @@ Bespaar op energiekosten en verhoog uw wooncomfort met professionele dak- en zol
         </div>  
 
         </div>
-       <div class="card grid grid-rows-2">
+       <div class="card flex flex-col gap-4">
         <div>
 
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3"><Paintbrush class="size-6 text-[#22385F]" /></div>
@@ -90,8 +119,8 @@ Bespaar op energiekosten en verhoog uw wooncomfort met professionele dak- en zol
  <div class="grid grid-rows-[1fr_1fr] gap-4">
        
         <img
-          src="./assets/hero-background.jpeg"
-          alt="Realisatie 2"
+          src="./assets/house-3.jpeg"
+          alt="Realisatie 3"
           class="img-card"
         />
           <img
@@ -128,7 +157,7 @@ Bespaar op energiekosten en verhoog uw wooncomfort met professionele dak- en zol
 <p class="text-lg">Specialist in dakwerken, isolatie en schilderwerken</p>
       </div>
        <div class="card grid grid-rows-2">
-<p class="text-lg">Snelle en duidelijke communicatie
+<p class="text-lg">+ 12 jaar ervaring
 </p>
       </div>
         <div class="card grid grid-rows-2">
@@ -188,7 +217,7 @@ Bespaar op energiekosten en verhoog uw wooncomfort met professionele dak- en zol
     <div class="flex flex-col items-start gap-4 max-w-lg">
 
       <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
-      <p class="text-sm">Op zoek naar een specialist in dakwerken, isolatie of schilderwerken in Leuven? Dakwolf biedt kwalitatieve oplossingen voor renovatie en nieuwbouw. Contacteer ons vandaag voor een vrijblijvende offerte.</p>
+      <p class="text-sm">Dakwerken, isolatie en schilderwerken in Leuven nodig? Dakwolf is uw betrouwbare partner voor renovatie en herstellingen in Leuven, Heverlee, Kessel-Lo en omgeving.</p>
     </div>
     <div class="flex items-center gap-2">
        <a href="tel:+32483819504" title="Bel ons" class="bg-[#b1bdcf] rounded-full w-fit p-3 block">
@@ -204,4 +233,17 @@ Bespaar op energiekosten en verhoog uw wooncomfort met professionele dak- en zol
   </footer>
 </template>
 
-<style scoped>@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');</style>
+<style scoped>@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}</style>
