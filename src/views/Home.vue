@@ -1,12 +1,153 @@
 <script setup lang="ts">
 import { House, Paintbrush, Wind, Phone, Mail } from '@lucide/vue'
 import { useRouter } from 'vue-router'
+import { useHead } from '@vueuse/head'
 
 const router = useRouter()
 
 function goToContact() {
   router.push({ name: 'contact' })
 }
+
+useHead({
+  title: 'Dakwolf - Dakwerken, Isolatie & Schilderwerken in Leuven',
+
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Dakwolf is gespecialiseerd in dakwerken, isolatie en schilderwerken in Leuven en omgeving. 12+ jaar ervaring, snelle service en offerte binnen 2 dagen.',
+    },
+
+    {
+      name: 'keywords',
+      content:
+        'dakwerken Leuven, dakwerker Leuven, dakreparatie Leuven, dakrenovatie Leuven, isolatie Leuven, schilderwerken Leuven, Dakwolf',
+    },
+
+    // Open Graph
+    {
+      property: 'og:title',
+      content: 'Dakwolf - Dakwerken, Isolatie & Schilderwerken in Leuven',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Voor dakherstellingen, renovaties, isolatie en schilderwerken in Leuven en omgeving.',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:url',
+      content: 'https://www.dakwolf.be',
+    },
+    {
+      property: 'og:image',
+      content: 'https://www.dakwolf.be/social.jpg',
+    },
+
+    // Twitter / X
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:title',
+      content: 'Dakwolf - Dakwerken, Isolatie & Schilderwerken in Leuven',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Betrouwbare vakman voor dakwerken, isolatie en schilderwerken in Leuven en omgeving.',
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://www.dakwolf.be/social.jpg',
+    },
+
+    // Theme
+    {
+      name: 'theme-color',
+      content: '#22385F',
+    },
+  ],
+
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://www.dakwolf.be',
+    },
+    {
+      rel: 'alternate',
+      hreflang: 'nl-be',
+      href: 'https://www.dakwolf.be',
+    },
+  ],
+
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'RoofingContractor',
+
+        name: 'Dakwolf',
+
+        url: 'https://www.dakwolf.be',
+
+        telephone: '+32483819504',
+
+        email: 'info@dakwolf.be',
+
+        description:
+          'Dakwolf is gespecialiseerd in dakwerken, isolatie en schilderwerken in Leuven en omgeving.',
+
+        areaServed: ['Leuven', 'Heverlee', 'Kessel-Lo', 'Herent', 'Wilsele', 'Oud-Heverlee'],
+
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Leuven',
+          addressCountry: 'BE',
+        },
+
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '08:00',
+            closes: '18:00',
+          },
+        ],
+
+        makesOffer: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Dakwerken',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Isolatiewerken',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Schilderwerken',
+            },
+          },
+        ],
+      }),
+    },
+  ],
+})
 </script>
 
 <template>

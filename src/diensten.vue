@@ -8,12 +8,14 @@ import { Check } from '@lucide/vue'
 
     <div class="flex flex-col gap-12">
       <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
-        <img
-          src="./assets/diensten-dakwerken.webp"
-          class="w-full h-full object-cover"
-          alt="Dakwerken"
-        />
-        <div class="flex items-center justify-center p-16">
+        <div class="relative w-full h-64 md:h-full self-stretch">
+          <img
+            src="./assets/hero-background.jpeg"
+            class="absolute inset-0 w-full h-full object-cover"
+            alt="Dakwerken"
+          />
+        </div>
+        <div class="flex items-center justify-center p-8 md:p-16">
           <div>
             <h3>Dakwerken</h3>
             <p>
@@ -61,12 +63,14 @@ import { Check } from '@lucide/vue'
       </div>
 
       <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
-        <img
-          src="./assets/diensten-dakwerken.webp"
-          class="w-full h-full object-cover md:col-start-2"
-          alt="Dakwerken"
-        />
-        <div class="flex items-center justify-center p-16 md:col-start-1 md:row-start-1">
+        <div class="relative w-full h-64 md:h-full self-stretch md:col-start-2">
+          <img
+            src="./assets/diensten-dakwerken.webp"
+            class="absolute inset-0 w-full h-full object-cover"
+            alt="Dakwerken"
+          />
+        </div>
+        <div class="flex items-center justify-center p-8 md:p-16 md:col-start-1 md:row-start-1">
           <div>
             <h3>Isolatie</h3>
             <p>Een goede isolatie is essentieel voor comfort en energiebesparing.</p>
@@ -103,12 +107,15 @@ import { Check } from '@lucide/vue'
       </div>
 
       <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
-        <img
-          src="./assets/diensten-dakwerken.webp"
-          class="w-full h-full object-cover"
-          alt="Dakwerken"
-        />
-        <div class="flex items-center justify-center p-16">
+        <div class="relative w-full h-64 md:h-full self-stretch">
+          <img
+            src="./assets/house-4.jpeg"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="object-position: center 28%"
+            alt="Dakwerken"
+          />
+        </div>
+        <div class="flex items-center justify-center p-8 md:p-16">
           <div>
             <h3>Schilderwerken</h3>
             <p>Voor een verzorgde en professionele afwerking van uw woning.</p>

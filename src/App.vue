@@ -7,7 +7,9 @@ const mobileNavOpen = ref(false)
 
 <template>
   <header class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 py-4 items-center">
-    <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
+    <RouterLink to="/" aria-label="Home">
+      <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
+    </RouterLink>
     <!-- Desktop nav -->
     <div class="hidden md:grid grid-cols-4 gap-6 items-center justify-between w-full">
       <RouterLink to="/" class="text-center">Home</RouterLink>
@@ -58,7 +60,9 @@ const mobileNavOpen = ref(false)
   <footer class="border-t border-[#d6d6d6] px-8 py-16 grid gap-8 md:grid-cols-[1fr_auto_auto]">
     <!-- LOGO + SEO -->
     <div class="flex flex-col gap-4 max-w-md">
-      <img class="h-16 mr-auto" src="./assets/logo.svg" alt="Dakwolf logo" />
+      <RouterLink to="/" aria-label="Home" class="mr-auto">
+        <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
+      </RouterLink>
       <p class="text-sm text-gray-700">
         Dakwerken, isolatie en schilderwerken in Leuven nodig? Dakwolf is uw betrouwbare partner
         voor renovaties en herstellingen in Leuven, Heverlee, Kessel-Lo en omgeving.
