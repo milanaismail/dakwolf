@@ -220,11 +220,59 @@ useHead({
 
   <section class="px-8 py-16">
     <h2>Realisaties</h2>
-    <div class="grid grid-cols-1 h-fit md:grid-cols-2 grid-rows-4 max-h-350 gap-4">
-      <img src="../assets/hero-background.jpeg" alt="Realisatie 1" class="img-card md:row-span-2" />
-      <img src="../assets/zonnepanelen.jpeg" alt="Realisatie 2" class="img-card md:row-span-1" />
-      <img src="../assets/house-3.jpeg" alt="Realisatie 3" class="img-card md:row-span-3" />
-      <img src="../assets/house-4.jpeg" alt="Realisatie 4" class="img-card md:row-span-2" />
+    <div class="grid grid-cols-1 h-fit md:grid-cols-2 grid-rows-4 max-h-300 gap-4">
+      <div class="relative md:row-span-2 overflow-hidden rounded-lg">
+        <img src="../assets/hero-background.jpeg" alt="Realisatie 1" class="img-card" />
+        <span
+          class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
+        >
+          Herent
+        </span>
+        <span
+          class="absolute left-3 bottom-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold max-w-[80%] text-right whitespace-normal"
+        >
+          Hellend dak
+        </span>
+      </div>
+      <div class="relative md:row-span-2 overflow-hidden rounded-lg">
+        <img src="../assets/zonnepanelen.jpeg" alt="Realisatie 2" class="img-card" />
+        <span
+          class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
+        >
+          Herent
+        </span>
+        <span
+          class="absolute left-3 bottom-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold max-w-[80%] text-right whitespace-normal"
+        >
+          Zonnepanelen, hellend dak & plat dak
+        </span>
+      </div>
+      <div class="relative md:row-span-2 overflow-hidden rounded-lg">
+        <img src="../assets/house-3.jpeg" alt="Realisatie 3" class="img-card" />
+        <span
+          class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
+        >
+          Grimbergen
+        </span>
+        <span
+          class="absolute left-3 bottom-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold max-w-[80%] text-right whitespace-normal"
+        >
+          hellend dak & crepi
+        </span>
+      </div>
+      <div class="relative md:row-span-2 overflow-hidden rounded-lg">
+        <img src="../assets/house-4.jpeg" alt="Realisatie 4" class="img-card" />
+        <span
+          class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
+        >
+          Herent
+        </span>
+        <span
+          class="absolute left-3 bottom-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold max-w-[80%] text-right whitespace-normal"
+        >
+          Gevel
+        </span>
+      </div>
     </div>
   </section>
 
