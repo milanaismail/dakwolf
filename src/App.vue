@@ -70,7 +70,7 @@ const mobileNavOpen = ref(false)
       <p class="font-semibold mb-2">Snelle links</p>
       <a href="/" class="text-sm underline">Home</a>
       <a href="/diensten" class="text-sm underline">Diensten</a>
-      <a href="/overons" class="text-sm underline">Over ons</a>
+      <a href="/over-ons" class="text-sm underline">Over ons</a>
       <a href="/contact" class="text-sm underline">Contact</a>
     </div>
 

@@ -52,7 +52,7 @@ import { Phone, Mail } from '@lucide/vue'
 
           <textarea
             rows="1"
-            placeholder="Korte beschrijving van uw project"
+            placeholder="Korte beschrijving "
             class="input-field resize-none"
           ></textarea>
 

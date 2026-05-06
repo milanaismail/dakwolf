@@ -15,7 +15,7 @@ function goToContact() {
       <h1 class="text-5xl font-bold text-center md:text-left">
         Dakwerken, isolatie en schilderwerken in Leuven
       </h1>
-      <p class="text-lg">
+      <p class="text-lg text-center">
         Voor herstellingen, renovaties en afwerking op maat met 12+ jaar ervaring.
       </p>
       <RouterLink to="/contact" class="button-primary">Vraag offerte aan</RouterLink>
@@ -88,10 +88,10 @@ function goToContact() {
   </section>
 
   <section class="px-8 py-16">
-    <div class="grid md:grid-cols-[0.5fr_1fr_1fr] grid-cols-2 grid-rows-auto md:grid-rows-2 gap-4">
-      <div
-        class="card bg-[#22385F] md:row-span-3 col-span-2 md:col-span-1 flex flex-col justify-between"
-      >
+    <div
+      class="grid md:grid-cols-[0.5fr_1fr_1fr] grid-cols-1 md:grid-rows-auto md:grid-rows-2 gap-4"
+    >
+      <div class="card bg-[#22385F] md:row-span-3 md:col-span-1 flex flex-col justify-between">
         <div>
           <p class="text-white text-xl font-semibold">Waarom kiezen voor ons?</p>
         </div>
@@ -196,7 +196,7 @@ function goToContact() {
 
           <textarea
             rows="1"
-            placeholder="Korte beschrijving van uw project"
+            placeholder="Korte beschrijving "
             class="input-field resize-none"
           ></textarea>
 
