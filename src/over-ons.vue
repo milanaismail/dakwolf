@@ -7,7 +7,7 @@ import { Check } from '@lucide/vue'
     <div class="flex flex-col gap-2">
       <h2>Over ons</h2>
       <div class="grid md:grid-cols-[2fr_1fr] grid-cols-1 gap-4">
-        <div class="card-dark">
+        <div class="card border-gray-200 border">
           <h3>Onze aanpak</h3>
           <p>
             Wij geloven in een persoonlijke en duidelijke werkwijze. Elk project start met een
@@ -16,7 +16,7 @@ import { Check } from '@lucide/vue'
             zorgen we voor een vlotte uitvoering door ons team.
           </p>
         </div>
-        <div class="card-dark">
+        <div class="card border-gray-200 border">
           <h3>Ons team</h3>
           <p>
             Wij werken met een team van ervaren vakmensen die elk hun specialisatie hebben. Door
@@ -24,7 +24,7 @@ import { Check } from '@lucide/vue'
             in de details afgewerkt.
           </p>
         </div>
-        <div class="card-dark md:col-start-2 md:row-span-2 md:row-start-1">
+        <div class="card border-gray-200 border md:col-start-2 md:row-span-2 md:row-start-1">
           <h3>Waar wij voor staan</h3>
           <ul class="diensten-list diensten-list--two">
             <li class="diensten-li">

@@ -33,7 +33,7 @@ function goToContact() {
       <div class="card border-gray-200 border flex flex-col gap-4 flex-1">
         <div>
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3">
-            <Wind class="size-6 text-[#22385F]" />
+            <House class="size-6 text-[#22385F]" />
           </div>
         </div>
         <div>
@@ -48,7 +48,7 @@ function goToContact() {
       <div class="card border-gray-200 border flex flex-col gap-4 flex-1">
         <div>
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3">
-            <House class="size-6 text-[#22385F]" />
+            <Wind class="size-6 text-[#22385F]" />
           </div>
         </div>
         <div>
@@ -79,11 +79,11 @@ function goToContact() {
 
   <section class="px-8 py-16">
     <h2>Realisaties</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 md:auto-rows-[300px] gap-4">
+    <div class="grid grid-cols-1 h-fit md:grid-cols-2 grid-rows-4 max-h-350 gap-4">
       <img src="../assets/hero-background.jpeg" alt="Realisatie 1" class="img-card md:row-span-2" />
       <img src="../assets/zonnepanelen.jpeg" alt="Realisatie 2" class="img-card md:row-span-1" />
-      <img src="../assets/house-3.jpeg" alt="Realisatie 3" class="img-card md:row-span-2" />
-      <img src="../assets/hero-background.jpeg" alt="Realisatie 4" class="img-card md:row-span-1" />
+      <img src="../assets/house-3.jpeg" alt="Realisatie 3" class="img-card md:row-span-3" />
+      <img src="../assets/house-4.jpeg" alt="Realisatie 4" class="img-card md:row-span-2" />
     </div>
   </section>
 
