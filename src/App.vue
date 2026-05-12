@@ -72,10 +72,10 @@ const mobileNavOpen = ref(false)
     <!-- NAVIGATIE -->
     <div class="flex flex-col gap-2">
       <p class="font-semibold mb-2">Snelle links</p>
-      <a href="/" class="text-sm underline">Home</a>
-      <a href="/diensten" class="text-sm underline">Diensten</a>
-      <a href="/over-ons" class="text-sm underline">Over ons</a>
-      <a href="/contact" class="text-sm underline">Contact</a>
+      <RouterLink to="/" class="text-sm underline">Home</RouterLink>
+      <RouterLink to="/diensten" class="text-sm underline">Diensten</RouterLink>
+      <RouterLink to="/over-ons" class="text-sm underline">Over ons</RouterLink>
+      <RouterLink to="/contact" class="text-sm underline">Contact</RouterLink>
     </div>
 
     <!-- CONTACT -->
