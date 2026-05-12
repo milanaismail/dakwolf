@@ -6,52 +6,87 @@ import { Check } from '@lucide/vue'
   <section class="px-8 py-16">
     <div class="flex flex-col gap-2">
       <h2>Over ons</h2>
-      <div class="grid md:grid-cols-[2fr_1fr] grid-cols-1 gap-4">
-        <div class="card border-gray-200 border">
+      <div class="flex flex-col gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Meer dan 12 jaar ervaring</span>
+          </div>
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Gedetailleerd werk volgens uw wensen</span>
+          </div>
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Kwaliteit en klanttevredenheid centraal</span>
+          </div>
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Nette en verzorgde afwerking</span>
+          </div>
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Correcte en competitieve prijzen</span>
+          </div>
+          <div class="card border-gray-200 border flex gap-4">
+            <span class="diensten-bullet"><Check class="diensten-icon" /></span>
+            <span>Actief binnen 50 km rond Leuven</span>
+          </div>
+        </div>
+        <div>
           <h3>Onze aanpak</h3>
-          <p>
-            Wij geloven in een persoonlijke en duidelijke werkwijze. Elk project start met een
-            plaatsbezoek waarbij we alles bekijken en uw wensen bespreken. Daarna ontvangt u binnen
-            2 dagen een duidelijke en transparante offerte. Na akkoord plannen we de werken in en
-            zorgen we voor een vlotte uitvoering door ons team.
-          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card border-gray-200 border flex flex-col gap-3">
+              <span class="text-sm font-semibold text-[#22385F]">01</span>
+              <h3 class="text-xl font-semibold">Plaatsbezoek</h3>
+              <p class="text-gray-700">
+                We komen langs, bekijken de werken en luisteren naar uw wensen.
+              </p>
+            </div>
+
+            <div class="card border-gray-200 border flex flex-col gap-3">
+              <span class="text-sm font-semibold text-[#22385F]">02</span>
+              <h3 class="text-xl font-semibold">Duidelijke offerte</h3>
+              <p class="text-gray-700">U ontvangt binnen 2 dagen een duidelijke offerte op maat.</p>
+            </div>
+
+            <div class="card border-gray-200 border flex flex-col gap-3">
+              <span class="text-sm font-semibold text-[#22385F]">03</span>
+              <h3 class="text-xl font-semibold">Planning & uitvoering</h3>
+              <p class="text-gray-700">
+                Na akkoord plannen we de werken in en starten we volgens afspraak.
+              </p>
+            </div>
+
+            <div class="card border-gray-200 border flex flex-col gap-3">
+              <span class="text-sm font-semibold text-[#22385F]">04</span>
+              <h3 class="text-xl font-semibold">Nette oplevering</h3>
+              <p class="text-gray-700">
+                We werken alles zorgvuldig af en laten de werf netjes achter.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="card border-gray-200 border">
-          <h3>Ons team</h3>
-          <p>
-            Wij werken met een team van ervaren vakmensen die elk hun specialisatie hebben. Door
-            samen te werken kunnen we efficiënt werken en zorgen voor een kwalitatief resultaat, tot
-            in de details afgewerkt.
-          </p>
-        </div>
-        <div class="card border-gray-200 border md:col-start-2 md:row-span-2 md:row-start-1">
-          <h3>Waar wij voor staan</h3>
-          <ul class="diensten-list diensten-list--two">
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Meer dan 12 jaar ervaring</span>
-            </li>
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Gedetailleerd werk volgens uw wensen</span>
-            </li>
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Kwaliteit en klanttevredenheid centraal</span>
-            </li>
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Nette en verzorgde afwerking</span>
-            </li>
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Correcte en competitieve prijzen</span>
-            </li>
-            <li class="diensten-li">
-              <span class="diensten-bullet"><Check class="diensten-icon" /></span>
-              <span>Actief binnen 50 km rond Leuven</span>
-            </li>
-          </ul>
+        <div
+          class="card text-white bg-[#22385f] grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden"
+        >
+          <div class="flex items-center justify-center p-8 md:p-12 lg:p-16">
+            <div>
+              <h3 class="text-white">Ons team</h3>
+              <p>
+                Wij werken met een team van ervaren vakmensen die elk hun specialisatie hebben. Door
+                samen te werken kunnen we efficiënt werken en zorgen voor een kwalitatief resultaat,
+                tot in de details afgewerkt.
+              </p>
+            </div>
+          </div>
+          <div class="relative w-full h-64 md:h-80 self-stretch">
+            <img
+              class="absolute inset-0 w-full h-full object-cover"
+              src="./assets/over-ons.webp"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>

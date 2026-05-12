@@ -15,7 +15,7 @@ import { Check } from '@lucide/vue'
             alt="Dakwerken"
           />
         </div>
-        <div class="flex items-center justify-center p-8 md:p-16">
+        <div class="flex items-center justify-center p-8 md:p-12 lg:p-16">
           <div>
             <h3>Dakwerken</h3>
             <p>
@@ -70,7 +70,9 @@ import { Check } from '@lucide/vue'
             alt="Dakwerken"
           />
         </div>
-        <div class="flex items-center justify-center p-8 md:p-16 md:col-start-1 md:row-start-1">
+        <div
+          class="flex items-center justify-center p-8 md:p-12 lg:p-16 md:col-start-1 md:row-start-1"
+        >
           <div>
             <h3>Isolatie</h3>
             <p>Een goede isolatie is essentieel voor comfort en energiebesparing.</p>
@@ -115,7 +117,7 @@ import { Check } from '@lucide/vue'
             alt="Dakwerken"
           />
         </div>
-        <div class="flex items-center justify-center p-8 md:p-16">
+        <div class="flex items-center justify-center p-8 md:p-12 lg:p-16">
           <div>
             <h3>Schilderwerken</h3>
             <p>Voor een verzorgde en professionele afwerking van uw woning.</p>

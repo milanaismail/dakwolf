@@ -1,5 +1,56 @@
 <script setup lang="ts">
 import { Phone, Mail } from '@lucide/vue'
+import emailjs from '@emailjs/browser'
+import { reactive, ref } from 'vue'
+
+const form = reactive({
+  name: '',
+  phone: '',
+  email: '',
+  description: '',
+})
+
+const status = ref<'idle' | 'sending' | 'sent' | 'error'>('idle')
+const errorMessage = ref<string | null>(null)
+
+const onSubmit = async () => {
+  status.value = 'sending'
+  errorMessage.value = null
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+  if (!serviceId || !templateId || !publicKey) {
+    status.value = 'error'
+    errorMessage.value = 'EmailJS configuratie ontbreekt (VITE_EMAILJS_*).'
+    return
+  }
+
+  try {
+    await emailjs.send(
+      serviceId,
+      templateId,
+      {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.description,
+      },
+      { publicKey }
+    )
+
+    form.name = ''
+    form.phone = ''
+    form.email = ''
+    form.description = ''
+    status.value = 'sent'
+  } catch (error) {
+    status.value = 'error'
+    errorMessage.value = 'Versturen mislukt. Probeer opnieuw.'
+    console.error(error)
+  }
+}
 </script>
 
 <template>
@@ -45,18 +96,54 @@ import { Phone, Mail } from '@lucide/vue'
           <p>Neem vrijblijvend contact op.</p>
         </div>
 
-        <form class="flex flex-col gap-3" @submit.prevent>
-          <input type="text" placeholder="Naam" class="input-field" />
-          <input type="tel" placeholder="GSM nummer" class="input-field" />
-          <input type="email" placeholder="E-mailadres" class="input-field" />
+        <form class="flex flex-col gap-3" @submit.prevent="onSubmit">
+          <input
+            v-model="form.name"
+            name="name"
+            type="text"
+            placeholder="Naam"
+            class="input-field"
+            autocomplete="name"
+            required
+          />
+          <input
+            v-model="form.phone"
+            name="phone"
+            type="tel"
+            placeholder="GSM nummer"
+            class="input-field"
+            autocomplete="tel"
+          />
+          <input
+            v-model="form.email"
+            name="email"
+            type="email"
+            placeholder="E-mailadres"
+            class="input-field"
+            autocomplete="email"
+            required
+          />
 
           <textarea
             rows="1"
             placeholder="Korte beschrijving "
             class="input-field resize-none"
+            v-model="form.description"
+            name="message"
+            required
           ></textarea>
 
-          <button type="submit" class="button-secondary w-full">Vraag offerte aan</button>
+          <button
+            type="submit"
+            class="button-secondary w-full"
+            :disabled="status === 'sending'"
+            :aria-busy="status === 'sending'"
+          >
+            Vraag offerte aan
+          </button>
+
+          <p v-if="status === 'sent'" class="text-sm">Bedankt! We nemen snel contact op.</p>
+          <p v-else-if="status === 'error'" class="text-sm">{{ errorMessage }}</p>
         </form>
       </div>
     </div>

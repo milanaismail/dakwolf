@@ -26,17 +26,44 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+pnpm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+pnpm build
 ```
+
+## EmailJS (contactformulier)
+
+Het contactformulier in [src/contact.vue](src/contact.vue) verstuurt via EmailJS.
+
+1. Maak in EmailJS een **Email Service** aan (Gmail/Outlook/SMTP, …)
+2. Maak een **Email Template** aan met deze template-variabelen:
+
+- `name`
+- `email`
+- `phone`
+- `message`
+
+3. Kopieer je **Service ID**, **Template ID** en **Public Key**
+4. Maak lokaal een `.env` (niet committen) op basis van `.env.example`:
+
+```sh
+cp .env.example .env
+```
+
+5. Vul in `.env` de volgende keys in:
+
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+- `VITE_EMAILJS_PUBLIC_KEY`
+
+Herstart daarna de dev server (`pnpm dev`).
