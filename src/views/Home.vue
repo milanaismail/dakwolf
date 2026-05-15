@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { House, Paintbrush, Wind, Phone, Mail } from '@lucide/vue'
+import { House, Paintbrush, Wind, Phone, Mail, ArrowUpRight } from '@lucide/vue'
 import { useHead } from '@vueuse/head'
 import emailjs from '@emailjs/browser'
 import { reactive, ref } from 'vue'
@@ -195,7 +195,9 @@ useHead({
 </script>
 
 <template>
-  <section class="grid grid-cols-1 md:grid-cols-2 reverse-col w-full px-8 py-16 items-center gap-8">
+  <section
+    class="grid grid-cols-1 md:grid-cols-2 reverse-col w-full px-8 py-16 items-center gap-8 min-h-[calc(100vh-var(--app-header-height))]"
+  >
     <div class="flex items-center md:items-start flex-col gap-4 order-2 md:order-1">
       <h1 class="text-5xl font-bold text-center md:text-left">
         Dakwerken, isolatie en schilderwerken in Leuven
@@ -215,7 +217,16 @@ useHead({
   <section class="px-8 py-16">
     <h2>Diensten</h2>
     <div class="flex flex-col md:flex-row gap-4">
-      <div class="card border-gray-200 border flex flex-col gap-4 flex-1">
+      <RouterLink
+        to="/diensten"
+        class="card group flex flex-col gap-4 flex-1 relative no-underline cursor-pointer transition will-change-transform hover:-translate-y-0.5 hover:brightness-[0.97] active:translate-y-0 active:brightness-[0.94] motion-reduce:transition-none motion-reduce:hover:transform-none focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-[#22385F] focus-visible:outline-offset-4"
+        aria-label="Bekijk diensten: Dakwerken"
+      >
+        <span class="absolute right-4 top-4" aria-hidden="true">
+          <ArrowUpRight
+            class="size-5 text-[#22385F] rotate-12 opacity-70 transition-opacity group-hover:opacity-100 motion-reduce:transition-none"
+          />
+        </span>
         <div>
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3">
             <House class="size-6 text-[#22385F]" />
@@ -228,9 +239,18 @@ useHead({
             Wij zorgen voor een stevig en duurzaam resultaat.
           </p>
         </div>
-      </div>
+      </RouterLink>
 
-      <div class="card border-gray-200 border flex flex-col gap-4 flex-1">
+      <RouterLink
+        to="/diensten"
+        class="card group flex flex-col gap-4 flex-1 relative no-underline cursor-pointer transition will-change-transform hover:-translate-y-0.5 hover:brightness-[0.97] active:translate-y-0 active:brightness-[0.94] motion-reduce:transition-none motion-reduce:hover:transform-none focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-[#22385F] focus-visible:outline-offset-4"
+        aria-label="Bekijk diensten: Isolatie"
+      >
+        <span class="absolute right-4 top-4" aria-hidden="true">
+          <ArrowUpRight
+            class="size-5 text-[#22385F] rotate-12 opacity-70 transition-opacity group-hover:opacity-100 motion-reduce:transition-none"
+          />
+        </span>
         <div>
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3">
             <Wind class="size-6 text-[#22385F]" />
@@ -243,9 +263,18 @@ useHead({
             woont u comfortabeler en energiezuiniger.
           </p>
         </div>
-      </div>
+      </RouterLink>
 
-      <div class="card border-gray-200 border flex flex-col gap-4 flex-1">
+      <RouterLink
+        to="/diensten"
+        class="card group flex flex-col gap-4 flex-1 relative no-underline cursor-pointer transition will-change-transform hover:-translate-y-0.5 hover:brightness-[0.97] active:translate-y-0 active:brightness-[0.94] motion-reduce:transition-none motion-reduce:hover:transform-none focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-[#22385F] focus-visible:outline-offset-4"
+        aria-label="Bekijk diensten: Schilderwerken"
+      >
+        <span class="absolute right-4 top-4" aria-hidden="true">
+          <ArrowUpRight
+            class="size-5 text-[#22385F] rotate-12 opacity-70 transition-opacity group-hover:opacity-100 motion-reduce:transition-none"
+          />
+        </span>
         <div>
           <div class="bg-[#b1bdcf] rounded-full w-fit p-3">
             <Paintbrush class="size-6 text-[#22385F]" />
@@ -258,7 +287,7 @@ useHead({
             kwaliteit.
           </p>
         </div>
-      </div>
+      </RouterLink>
     </div>
   </section>
 
@@ -329,22 +358,22 @@ useHead({
           <p class="text-white text-xl font-semibold">Waarom kiezen voor ons?</p>
         </div>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">Dakwerken, isolatie en schilderwerken onder één dak</p>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">+ 12 jaar ervaring</p>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">Correcte prijs-kwaliteitverhouding</p>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">Nette en gedetailleerde afwerking</p>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">Actief binnen 50 km rond Leuven</p>
       </div>
-      <div class="card border-gray-200 border">
+      <div class="card">
         <p class="text-lg">Offerte binnen 2 dagen</p>
       </div>
     </div>
@@ -353,19 +382,19 @@ useHead({
     <h2>Hoe wij te werk gaan</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="card border-gray-200 border flex flex-col gap-3">
+      <div class="card flex flex-col gap-3">
         <span class="text-sm font-semibold text-[#22385F]">01</span>
         <h3 class="text-xl font-semibold">Plaatsbezoek</h3>
         <p class="text-gray-700">We komen langs, bekijken de werken en luisteren naar uw wensen.</p>
       </div>
 
-      <div class="card border-gray-200 border flex flex-col gap-3">
+      <div class="card flex flex-col gap-3">
         <span class="text-sm font-semibold text-[#22385F]">02</span>
         <h3 class="text-xl font-semibold">Duidelijke offerte</h3>
         <p class="text-gray-700">U ontvangt binnen 2 dagen een duidelijke offerte op maat.</p>
       </div>
 
-      <div class="card border-gray-200 border flex flex-col gap-3">
+      <div class="card flex flex-col gap-3">
         <span class="text-sm font-semibold text-[#22385F]">03</span>
         <h3 class="text-xl font-semibold">Planning & uitvoering</h3>
         <p class="text-gray-700">
@@ -373,7 +402,7 @@ useHead({
         </p>
       </div>
 
-      <div class="card border-gray-200 border flex flex-col gap-3">
+      <div class="card flex flex-col gap-3">
         <span class="text-sm font-semibold text-[#22385F]">04</span>
         <h3 class="text-xl font-semibold">Nette oplevering</h3>
         <p class="text-gray-700">We werken alles zorgvuldig af en laten de werf netjes achter.</p>
@@ -388,7 +417,7 @@ useHead({
           <a
             href="tel:+32483819504"
             title="Bel ons"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <Phone class="size-5 text-[#22385F]" />
           </a>
@@ -397,7 +426,7 @@ useHead({
             target="_blank"
             rel="noopener"
             title="WhatsApp"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <svg class="size-5" viewBox="0 0 510 512.459">
               <path
@@ -407,10 +436,9 @@ useHead({
             </svg>
           </a>
           <a
-            target="_blank"
-            rel="noopener"
-            title="WhatsApp"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            href="mailto:info@dakwolf.be"
+            title="Mail"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <Mail class="size-5 text-[#22385F]" />
           </a>
@@ -461,7 +489,7 @@ useHead({
 
           <button
             type="submit"
-            class="button-secondary w-full"
+            class="button-secondary w-full cursor-pointer"
             :disabled="status === 'sending'"
             :aria-busy="status === 'sending'"
           >

@@ -7,15 +7,15 @@ import { Check } from '@lucide/vue'
     <h2>Diensten</h2>
 
     <div class="flex flex-col gap-12">
-      <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 p-0 gap-2 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch">
           <img
             src="./assets/hero-background.jpeg"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="rounded-lg absolute inset-0 w-full h-full object-cover"
             alt="Dakwerken"
           />
         </div>
-        <div class="flex items-center justify-center p-8 md:p-12 lg:p-16">
+        <div class="card flex items-center justify-center p-8 md:p-12 lg:p-16">
           <div>
             <h3>Dakwerken</h3>
             <p>
@@ -62,16 +62,16 @@ import { Check } from '@lucide/vue'
         </div>
       </div>
 
-      <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
+      <div class="gap-2 grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch md:col-start-2">
           <img
             src="./assets/diensten-dakwerken.webp"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="rounded-lg absolute inset-0 w-full h-full object-cover"
             alt="Dakwerken"
           />
         </div>
         <div
-          class="flex items-center justify-center p-8 md:p-12 lg:p-16 md:col-start-1 md:row-start-1"
+          class="card flex items-center justify-center p-8 md:p-12 lg:p-16 md:col-start-1 md:row-start-1"
         >
           <div>
             <h3>Isolatie</h3>
@@ -108,16 +108,16 @@ import { Check } from '@lucide/vue'
         </div>
       </div>
 
-      <div class="card border-gray-200 border grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
+      <div class="gap-2 grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch">
           <img
             src="./assets/house-4.jpeg"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="rounded-lg absolute inset-0 w-full h-full object-cover"
             style="object-position: center 28%"
             alt="Dakwerken"
           />
         </div>
-        <div class="flex items-center justify-center p-8 md:p-12 lg:p-16">
+        <div class="card flex items-center justify-center p-8 md:p-12 lg:p-16">
           <div>
             <h3>Schilderwerken</h3>
             <p>Voor een verzorgde en professionele afwerking van uw woning.</p>

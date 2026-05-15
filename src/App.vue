@@ -6,16 +6,38 @@ const mobileNavOpen = ref(false)
 </script>
 
 <template>
-  <header class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 py-4 items-center">
+  <header
+    class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 h-[var(--app-header-height)] items-center"
+  >
     <RouterLink to="/" aria-label="Home">
       <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
     </RouterLink>
     <!-- Desktop nav -->
     <div class="hidden md:grid grid-cols-4 gap-6 items-center justify-between w-full">
-      <RouterLink to="/" class="text-center">Home</RouterLink>
-      <RouterLink to="/diensten" class="text-center">Diensten</RouterLink>
-      <RouterLink to="/over-ons" class="text-center">Over ons</RouterLink>
-      <RouterLink to="/contact" class="text-center">Contact</RouterLink>
+      <RouterLink to="/" class="text-center hover-text">
+        <span>
+          <span>Home</span>
+          <span>Home</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/diensten" class="text-center hover-text">
+        <span>
+          <span>Diensten</span>
+          <span>Diensten</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/over-ons" class="text-center hover-text">
+        <span>
+          <span>Over ons</span>
+          <span>Over ons</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/contact" class="text-center hover-text">
+        <span>
+          <span>Contact</span>
+          <span>Contact</span>
+        </span>
+      </RouterLink>
     </div>
     <a href="tel:+32483819504" class="ml-auto button-primary hidden md:block"> Bel nu </a>
     <!-- Mobile hamburger -->
@@ -37,16 +59,30 @@ const mobileNavOpen = ref(false)
           >
             <X class="size-7" />
           </button>
-          <RouterLink to="/" class="py-2 text-lg" @click="mobileNavOpen = false">Home</RouterLink>
-          <RouterLink to="/diensten" class="py-2 text-lg" @click="mobileNavOpen = false"
-            >Diensten</RouterLink
-          >
-          <RouterLink to="/over-ons" class="py-2 text-lg" @click="mobileNavOpen = false"
-            >Over ons</RouterLink
-          >
-          <RouterLink to="/contact" class="py-2 text-lg" @click="mobileNavOpen = false"
-            >Contact</RouterLink
-          >
+          <RouterLink to="/" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
+            <span>
+              <span>Home</span>
+              <span>Home</span>
+            </span>
+          </RouterLink>
+          <RouterLink to="/diensten" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
+            <span>
+              <span>Diensten</span>
+              <span>Diensten</span>
+            </span>
+          </RouterLink>
+          <RouterLink to="/over-ons" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
+            <span>
+              <span>Over ons</span>
+              <span>Over ons</span>
+            </span>
+          </RouterLink>
+          <RouterLink to="/contact" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
+            <span>
+              <span>Contact</span>
+              <span>Contact</span>
+            </span>
+          </RouterLink>
           <a href="tel:+32483819504" class="button-primary"> Bel nu </a>
         </nav>
       </div>
@@ -88,7 +124,7 @@ const mobileNavOpen = ref(false)
 
       <!-- ICONS -->
       <div class="flex gap-2 mt-2">
-        <a href="tel:+32483819504" class="bg-[#22385F] rounded-full p-3">
+        <a href="tel:+32483819504" class="contact-icon bg-[#22385F] rounded-full p-3">
           <Phone class="size-5 text-[#b1bdcf]" />
         </a>
 
@@ -97,7 +133,7 @@ const mobileNavOpen = ref(false)
           target="_blank"
           rel="noopener"
           title="WhatsApp"
-          class="bg-[#22385F] rounded-full w-fit p-3 block"
+          class="contact-icon bg-[#22385F] rounded-full w-fit p-3 block"
         >
           <svg class="size-5" viewBox="0 0 510 512.459">
             <path
@@ -107,7 +143,7 @@ const mobileNavOpen = ref(false)
           </svg>
         </a>
 
-        <a href="mailto:info@dakwolf.be" class="bg-[#22385F] rounded-full p-3">
+        <a href="mailto:info@dakwolf.be" class="contact-icon bg-[#22385F] rounded-full p-3">
           <Mail class="size-5 text-[#b1bdcf]" />
         </a>
       </div>
@@ -140,5 +176,22 @@ const mobileNavOpen = ref(false)
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.hover-text {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+.hover-text > span {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.hover-text:hover > span {
+  transform: translateY(-1.2em);
 }
 </style>

@@ -1,10 +1,14 @@
 @import 'tailwindcss';
 
 @layer base {
+  :root {
+    --app-header-height: 96px;
+  }
+
   body {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #fff;
     color: #161616;
     font-family: 'Manrope', sans-serif;
   }
@@ -30,7 +34,7 @@
 
 @layer components {
   .card {
-    @apply bg-white p-8 rounded-lg;
+    @apply bg-[#F2F3F7] p-8 rounded-lg;
   }
   .card-dark {
     @apply bg-[#b1bdcf] text-[#22385F] p-8 rounded-lg;
@@ -50,6 +54,79 @@
   }
   .button-secondary {
     @apply bg-[#b1bdcf] text-[#22385F] px-6 py-3 rounded-full w-fit;
+  }
+
+  .button-primary,
+  .button-secondary,
+  button {
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      filter 150ms ease;
+    will-change: transform;
+  }
+
+  .button-primary:hover,
+  .button-secondary:hover,
+  button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+
+  .button-primary:active,
+  .button-secondary:active,
+  button:active {
+    transform: translateY(0) scale(0.98);
+    filter: brightness(0.98);
+  }
+
+  .button-primary:focus-visible,
+  .button-secondary:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #22385f;
+    outline-offset: 3px;
+  }
+
+  .contact-icon {
+    transition:
+      transform 150ms ease,
+      filter 150ms ease;
+    will-change: transform;
+  }
+
+  .contact-icon:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+  }
+
+  .contact-icon:active {
+    transform: translateY(0) scale(0.98);
+    filter: brightness(0.98);
+  }
+
+  .contact-icon:focus-visible {
+    outline: 2px solid #22385f;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-primary,
+  .button-secondary,
+  button,
+  .contact-icon {
+    transition: none;
+  }
+
+  .button-primary:hover,
+  .button-secondary:hover,
+  button:hover,
+  .button-primary:active,
+  .button-secondary:active,
+  button:active,
+  .contact-icon:hover,
+  .contact-icon:active {
+    transform: none;
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');

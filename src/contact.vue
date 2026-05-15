@@ -58,11 +58,25 @@ const onSubmit = async () => {
     <div class="card bg-[#22385F] text-white grid md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-4">
       <div class="flex flex-col justify-between">
         <p class="text-3xl">Contacteer ons</p>
+
+        <div class="flex flex-col gap-3 md:hidden">
+          <a href="tel:+32483819504" class="button-secondary w-full text-center">Bel nu</a>
+          <a
+            href="https://wa.me/32483819504"
+            target="_blank"
+            rel="noopener"
+            class="button-secondary w-full text-center"
+          >
+            WhatsApp
+          </a>
+          <a href="mailto:info@dakwolf.be" class="button-secondary w-full text-center">Mail ons</a>
+        </div>
+
         <div class="items-center gap-2 hidden md:flex">
           <a
             href="tel:+32483819504"
             title="Bel ons"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <Phone class="size-5 text-[#22385F]" />
           </a>
@@ -71,7 +85,7 @@ const onSubmit = async () => {
             target="_blank"
             rel="noopener"
             title="WhatsApp"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <svg class="size-5" viewBox="0 0 510 512.459">
               <path
@@ -81,10 +95,9 @@ const onSubmit = async () => {
             </svg>
           </a>
           <a
-            target="_blank"
-            rel="noopener"
-            title="WhatsApp"
-            class="bg-[#b1bdcf] rounded-full w-fit p-3 block"
+            href="mailto:info@dakwolf.be"
+            title="Mail"
+            class="contact-icon bg-[#b1bdcf] rounded-full w-fit p-3 block"
           >
             <Mail class="size-5 text-[#22385F]" />
           </a>
@@ -135,7 +148,7 @@ const onSubmit = async () => {
 
           <button
             type="submit"
-            class="button-secondary w-full"
+            class="button-secondary w-full cursor-pointer"
             :disabled="status === 'sending'"
             :aria-busy="status === 'sending'"
           >
