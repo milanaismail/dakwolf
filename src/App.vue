@@ -1,8 +1,33 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Phone, Mail, Menu, X } from '@lucide/vue'
+import { Phone, Mail, Menu, X, setLucideProps } from '@lucide/vue'
+import { gsap } from 'gsap'
+
+setLucideProps({})
 
 const mobileNavOpen = ref(false)
+
+const onBeforeEnter = (el: Element) => {
+  gsap.set(el as gsap.TweenTarget, { autoAlpha: 0 })
+}
+
+const onEnter = (el: Element, done: () => void) => {
+  gsap.to(el as gsap.TweenTarget, {
+    autoAlpha: 1,
+    duration: 0.35,
+    ease: 'power1.out',
+    onComplete: done,
+  })
+}
+
+const onLeave = (el: Element, done: () => void) => {
+  gsap.to(el as gsap.TweenTarget, {
+    autoAlpha: 0,
+    duration: 0.25,
+    ease: 'power1.in',
+    onComplete: done,
+  })
+}
 </script>
 
 <template>
@@ -76,10 +101,23 @@ const mobileNavOpen = ref(false)
   </header>
 
   <main>
-    <RouterView />
+    <RouterView v-slot="{ Component, route }">
+      <Transition
+        :css="false"
+        mode="out-in"
+        appear
+        @before-enter="onBeforeEnter"
+        @enter="onEnter"
+        @leave="onLeave"
+      >
+        <div :key="route.fullPath">
+          <component :is="Component" />
+        </div>
+      </Transition>
+    </RouterView>
   </main>
 
-  <footer class="border-t border-[#d6d6d6] px-8 py-16 grid gap-8 md:grid-cols-[1fr_auto_auto]">
+  <footer class="border-t border-[#d6d6d6] px-8 py-16 grid gap-12 md:grid-cols-[1fr_auto_auto]">
     <!-- LOGO + SEO -->
     <div class="flex flex-col gap-4 max-w-md">
       <RouterLink to="/" aria-label="Home" class="mr-auto">
@@ -92,21 +130,51 @@ const mobileNavOpen = ref(false)
     </div>
 
     <!-- NAVIGATIE -->
-    <div class="flex flex-col gap-2">
-      <p class="font-semibold mb-2">Snelle links</p>
-      <RouterLink to="/" class="text-sm underline">Home</RouterLink>
-      <RouterLink to="/diensten" class="text-sm underline">Diensten</RouterLink>
-      <RouterLink to="/over-ons" class="text-sm underline">Over ons</RouterLink>
-      <RouterLink to="/contact" class="text-sm underline">Contact</RouterLink>
+    <div class="flex flex-col gap-4">
+      <p class="font-semibold">Snelle links</p>
+      <RouterLink to="/" class="underline text-left hover-text">
+        <span>
+          <span>Home</span>
+          <span>Home</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/diensten" class="underline text-left hover-text">
+        <span>
+          <span>Diensten</span>
+          <span>Diensten</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/over-ons" class="underline text-left hover-text">
+        <span>
+          <span>Over ons</span>
+          <span>Over ons</span>
+        </span>
+      </RouterLink>
+      <RouterLink to="/contact" class="underline text-left hover-text">
+        <span>
+          <span>Contact</span>
+          <span>Contact</span>
+        </span>
+      </RouterLink>
     </div>
 
     <!-- CONTACT -->
     <div class="flex flex-col gap-4">
       <p class="font-semibold">Contact</p>
 
-      <a href="tel:+32483819504" class="text-sm underline"> +32 483 81 95 04 </a>
+      <a href="tel:+32483819504" class="underline text-left hover-text">
+        <span>
+          <span>+32 483 81 95 04</span>
+          <span>+32 483 81 95 04</span>
+        </span>
+      </a>
 
-      <a href="mailto:info@dakwolf.be" class="text-sm underline"> info@dakwolf.be </a>
+      <a href="mailto:info@dakwolf.be" class="underline hover-text">
+        <span>
+          <span>info@dakwolf.be</span>
+          <span>info@dakwolf.be</span>
+        </span>
+      </a>
 
       <!-- ICONS -->
       <div class="flex gap-2 mt-2">

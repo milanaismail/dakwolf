@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+/// <reference path="./src/types/vue-spinner.d.ts" />
 
 interface ImportMetaEnv {
   readonly VITE_EMAILJS_SERVICE_ID: string
