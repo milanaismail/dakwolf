@@ -7,7 +7,7 @@ const mobileNavOpen = ref(false)
 
 <template>
   <header
-    class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 h-[var(--app-header-height)] items-center"
+    class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 h-(--app-header-height) items-center"
   >
     <RouterLink to="/" aria-label="Home">
       <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
@@ -50,7 +50,7 @@ const mobileNavOpen = ref(false)
       <div v-if="mobileNavOpen" class="fixed inset-0 z-50 bg-black/40 flex justify-end">
         <div class="flex-1" @click="mobileNavOpen = false"></div>
         <nav
-          class="bg-white w-3/4 max-w-xs h-full p-6 flex flex-col gap-6 shadow-lg animate-slideInRight"
+          class="bg-white w-3/4 max-w-xs h-dvh overflow-y-auto px-6 pt-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] flex flex-col gap-6 shadow-lg relative animate-slideInRight"
         >
           <button
             class="absolute right-6 top-6"
@@ -59,30 +59,16 @@ const mobileNavOpen = ref(false)
           >
             <X class="size-7" />
           </button>
-          <RouterLink to="/" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
-            <span>
-              <span>Home</span>
-              <span>Home</span>
-            </span>
+          <RouterLink to="/" class="py-2 text-lg" @click="mobileNavOpen = false">Home</RouterLink>
+          <RouterLink to="/diensten" class="py-2 text-lg" @click="mobileNavOpen = false">
+            Diensten
           </RouterLink>
-          <RouterLink to="/diensten" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
-            <span>
-              <span>Diensten</span>
-              <span>Diensten</span>
-            </span>
+          <RouterLink to="/over-ons" class="py-2 text-lg" @click="mobileNavOpen = false">
+            Over ons
           </RouterLink>
-          <RouterLink to="/over-ons" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
-            <span>
-              <span>Over ons</span>
-              <span>Over ons</span>
-            </span>
-          </RouterLink>
-          <RouterLink to="/contact" class="py-2 text-lg hover-text" @click="mobileNavOpen = false">
-            <span>
-              <span>Contact</span>
-              <span>Contact</span>
-            </span>
-          </RouterLink>
+          <RouterLink to="/contact" class="py-2 text-lg" @click="mobileNavOpen = false"
+            >Contact</RouterLink
+          >
           <a href="tel:+32483819504" class="button-primary"> Bel nu </a>
         </nav>
       </div>
@@ -158,6 +144,7 @@ const mobileNavOpen = ref(false)
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
@@ -166,6 +153,7 @@ const mobileNavOpen = ref(false)
     transform: translateX(0);
   }
 }
+
 .animate-slideInRight {
   animation: slideInRight 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -193,5 +181,23 @@ const mobileNavOpen = ref(false)
 
 .hover-text:hover > span {
   transform: translateY(-1.2em);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hover-text {
+    height: auto;
+    line-height: normal;
+    overflow: visible;
+  }
+
+  .hover-text > span {
+    display: inline;
+    transition: none;
+    transform: none;
+  }
+
+  .hover-text > span > span:last-child {
+    display: none;
+  }
 }
 </style>
