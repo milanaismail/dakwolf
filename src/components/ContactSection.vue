@@ -1,11 +1,11 @@
 <template>
   <section class="px-8 py-16">
     <div
-      class="card relative bg-[#22385F] text-white grid md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-8"
+      class="card relative bg-[#22385F] text-white grid md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-8 overflow-hidden"
     >
       <div
         v-if="status === 'sending'"
-        class="absolute inset-0 z-10 flex items-center justify-center bg-[#22385F]/80 overflow-hidden"
+        class="absolute inset-0 z-10 flex items-center justify-center bg-[#22385F]/80"
         aria-live="polite"
         aria-label="Bericht wordt verstuurd"
       >
