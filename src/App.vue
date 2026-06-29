@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { Phone, Mail, Menu, X, setLucideProps } from '@lucide/vue'
 import { gsap } from 'gsap'
+import logo from '@/assets/logo.svg'
 
 setLucideProps({})
 
@@ -35,7 +36,14 @@ const onLeave = (el: Element, done: () => void) => {
     class="grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 w-full px-8 h-(--app-header-height) items-center"
   >
     <RouterLink to="/" aria-label="Home">
-      <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
+      <img
+        :src="logo"
+        alt="Dakwolf logo"
+        width="160"
+        height="64"
+        class="h-16 w-40 object-contain"
+        decoding="async"
+      />
     </RouterLink>
     <!-- Desktop nav -->
     <div class="hidden md:grid grid-cols-4 gap-6 items-center justify-between w-full">
@@ -100,12 +108,11 @@ const onLeave = (el: Element, done: () => void) => {
     </transition>
   </header>
 
-  <main>
+  <main class="min-h-[calc(100vh-var(--app-header-height))]">
     <RouterView v-slot="{ Component, route }">
       <Transition
         :css="false"
         mode="out-in"
-        appear
         @before-enter="onBeforeEnter"
         @enter="onEnter"
         @leave="onLeave"
@@ -121,7 +128,14 @@ const onLeave = (el: Element, done: () => void) => {
     <!-- LOGO + SEO -->
     <div class="flex flex-col gap-4 max-w-md">
       <RouterLink to="/" aria-label="Home" class="mr-auto">
-        <img class="h-16" src="./assets/logo.svg" alt="Dakwolf logo" />
+        <img
+          :src="logo"
+          alt="Dakwolf logo"
+          width="160"
+          height="64"
+          class="h-16 w-40 object-contain"
+          decoding="async"
+        />
       </RouterLink>
       <p class="text-sm text-gray-700">
         Dakwerken, isolatie en schilderwerken in Leuven nodig? Dakwolf is uw betrouwbare partner
@@ -178,7 +192,11 @@ const onLeave = (el: Element, done: () => void) => {
 
       <!-- ICONS -->
       <div class="flex gap-2 mt-2">
-        <a href="tel:+32483819504" class="contact-icon bg-[#22385F] rounded-full p-3">
+        <a
+          href="tel:+32483819504"
+          class="contact-icon bg-[#22385F] rounded-full p-3"
+          aria-label="Bel Dakwolf"
+        >
           <Phone class="size-5 text-[#b1bdcf]" />
         </a>
 
@@ -188,6 +206,7 @@ const onLeave = (el: Element, done: () => void) => {
           rel="noopener"
           title="WhatsApp"
           class="contact-icon bg-[#22385F] rounded-full w-fit p-3 block"
+          aria-label="Chat via WhatsApp"
         >
           <svg class="size-5" viewBox="0 0 510 512.459">
             <path
@@ -197,7 +216,11 @@ const onLeave = (el: Element, done: () => void) => {
           </svg>
         </a>
 
-        <a href="mailto:info@dakwolf.be" class="contact-icon bg-[#22385F] rounded-full p-3">
+        <a
+          href="mailto:info@dakwolf.be"
+          class="contact-icon bg-[#22385F] rounded-full p-3"
+          aria-label="Stuur een e-mail"
+        >
           <Mail class="size-5 text-[#b1bdcf]" />
         </a>
       </div>
@@ -211,8 +234,6 @@ const onLeave = (el: Element, done: () => void) => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
 @keyframes slideInRight {
   from {
     transform: translateX(100%);

@@ -1,5 +1,14 @@
 @import 'tailwindcss';
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-v20-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
 
+body {
+  font-family: 'Manrope', sans-serif;
+}
 @layer base {
   :root {
     --app-header-height: 96px;
@@ -129,7 +138,6 @@
     transform: none;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 .diensten-list {
   list-style: none;

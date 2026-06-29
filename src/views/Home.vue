@@ -1,8 +1,22 @@
 <script setup lang="ts">
 import { House, Paintbrush, Wind, ArrowUpRight } from '@lucide/vue'
 import { useHead } from '@vueuse/head'
+import heroBackground400 from '@/assets/hero-background-400.webp'
+import heroBackground800 from '@/assets/hero-background-800.webp'
+import heroBackground1200 from '@/assets/hero-background-1200.webp'
 
+import zonnepanelen400 from '@/assets/zonnepanelen-400.webp'
+import zonnepanelen800 from '@/assets/zonnepanelen-800.webp'
+import zonnepanelen1200 from '@/assets/zonnepanelen-1200.webp'
 import ContactSection from '@/components/ContactSection.vue'
+
+import house3400 from '@/assets/house-3-400.webp'
+import house3800 from '@/assets/house-3-800.webp'
+import house31200 from '@/assets/house-3-1200.webp'
+
+import house4400 from '@/assets/house-4-400.webp'
+import house4800 from '@/assets/house-4-800.webp'
+import house41200 from '@/assets/house-4-1200.webp'
 
 useHead({
   title: 'Dakwolf - Dakwerken, Isolatie & Schilderwerken in Leuven',
@@ -158,10 +172,17 @@ useHead({
       </p>
       <RouterLink to="/contact" class="button-primary">Vraag offerte aan</RouterLink>
     </div>
+
     <img
+      :src="heroBackground800"
+      :srcset="`${heroBackground400} 400w, ${heroBackground800} 800w, ${heroBackground1200} 1200w`"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      alt="Dakwerken en renovatie door Dakwolf"
+      width="1200"
+      height="1200"
       class="rounded-lg shadow-sm object-cover aspect-square order-1 md:order-2"
-      src="../assets/hero-background.jpeg"
-      alt="Hero image"
+      decoding="async"
+      fetchpriority="high"
     />
   </section>
 
@@ -246,7 +267,15 @@ useHead({
     <h2>Realisaties</h2>
     <div class="grid grid-cols-1 h-fit md:grid-cols-2 grid-rows-4 max-h-300 gap-4">
       <div class="relative md:row-span-2 overflow-hidden rounded-lg">
-        <img src="../assets/hero-background.jpeg" alt="Realisatie 1" class="img-card" />
+        <img
+          :src="heroBackground800"
+          :srcset="`${heroBackground400} 400w, ${heroBackground800} 800w, ${heroBackground1200} 1200w`"
+          sizes="(max-width: 768px) 100vw, 442px"
+          alt="Realisatie 1"
+          class="img-card"
+          loading="lazy"
+          decoding="async"
+        />
         <span
           class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
         >
@@ -259,7 +288,15 @@ useHead({
         </span>
       </div>
       <div class="relative md:row-span-2 overflow-hidden rounded-lg">
-        <img src="../assets/zonnepanelen.jpeg" alt="Realisatie 2" class="img-card" />
+        <img
+          :src="zonnepanelen800"
+          :srcset="`${zonnepanelen400} 400w, ${zonnepanelen800} 800w, ${zonnepanelen1200} 1200w`"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="Realisatie 2"
+          class="img-card"
+          loading="lazy"
+          decoding="async"
+        />
         <span
           class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
         >
@@ -272,7 +309,15 @@ useHead({
         </span>
       </div>
       <div class="relative md:row-span-2 overflow-hidden rounded-lg">
-        <img src="../assets/house-3.jpeg" alt="Realisatie 3" class="img-card" />
+        <img
+          :src="house3800"
+          :srcset="`${house3400} 400w, ${house3800} 800w, ${house31200} 1200w`"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="Realisatie 3"
+          class="img-card"
+          loading="lazy"
+          decoding="async"
+        />
         <span
           class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
         >
@@ -285,7 +330,15 @@ useHead({
         </span>
       </div>
       <div class="relative md:row-span-2 overflow-hidden rounded-lg">
-        <img src="../assets/house-4.jpeg" alt="Realisatie 4" class="img-card" />
+        <img
+          :src="house4800"
+          :srcset="`${house4400} 400w, ${house4800} 800w, ${house41200} 1200w`"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="Realisatie 4"
+          class="img-card"
+          loading="lazy"
+          decoding="async"
+        />
         <span
           class="absolute left-3 top-3 bg-[#b1bdcf]/90 text-[#22385F] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
         >

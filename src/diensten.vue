@@ -1,5 +1,27 @@
 <script setup lang="ts">
 import { Check } from '@lucide/vue'
+import { useHead } from '@vueuse/head'
+
+import heroBackground400 from '@/assets/hero-background-400.webp'
+import heroBackground800 from '@/assets/hero-background-800.webp'
+import heroBackground1200 from '@/assets/hero-background-1200.webp'
+import dienstenDakwerken400 from '@/assets/diensten-dakwerken-400.webp'
+import dienstenDakwerken800 from '@/assets/diensten-dakwerken-800.webp'
+import dienstenDakwerken1200 from '@/assets/diensten-dakwerken-1200.webp'
+import house4400 from '@/assets/house-4-400.webp'
+import house4800 from '@/assets/house-4-800.webp'
+import house41200 from '@/assets/house-4-1200.webp'
+
+useHead({
+  title: 'Diensten - Dakwerken, Isolatie & Schilderwerken | Dakwolf',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Ontdek de diensten van Dakwolf: dakwerken, dakisolatie, gevelisolatie en schilderwerken in Leuven en omgeving.',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -10,9 +32,13 @@ import { Check } from '@lucide/vue'
       <div class="grid grid-cols-1 md:grid-cols-2 p-0 gap-2 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch">
           <img
-            src="./assets/hero-background.jpeg"
-            class="rounded-lg absolute inset-0 w-full h-full object-cover"
+            :src="heroBackground800"
+            :srcset="`${heroBackground400} 400w, ${heroBackground800} 800w, ${heroBackground1200} 1200w`"
+            sizes="(max-width: 768px) 100vw, 442px"
             alt="Dakwerken"
+            class="rounded-lg absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="card flex items-center justify-center p-8 md:p-12 lg:p-16">
@@ -65,9 +91,13 @@ import { Check } from '@lucide/vue'
       <div class="gap-2 grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch md:col-start-2">
           <img
-            src="./assets/diensten-dakwerken.webp"
-            class="rounded-lg absolute inset-0 w-full h-full object-cover"
+            :src="dienstenDakwerken800"
+            :srcset="`${dienstenDakwerken400} 400w, ${dienstenDakwerken800} 800w, ${dienstenDakwerken1200} 1200w`"
+            sizes="(max-width: 768px) 100vw, 442px"
             alt="Dakwerken"
+            class="rounded-lg absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div
@@ -111,10 +141,14 @@ import { Check } from '@lucide/vue'
       <div class="gap-2 grid grid-cols-1 md:grid-cols-2 p-0 overflow-hidden">
         <div class="relative w-full h-64 md:h-full self-stretch">
           <img
-            src="./assets/house-4.jpeg"
+            :src="house4800"
+            :srcset="`${house4400} 400w, ${house4800} 800w, ${house41200} 1200w`"
+            sizes="(max-width: 768px) 100vw, 442px"
+            alt="Dakwerken"
             class="rounded-lg absolute inset-0 w-full h-full object-cover"
             style="object-position: center 28%"
-            alt="Dakwerken"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="card flex items-center justify-center p-8 md:p-12 lg:p-16">

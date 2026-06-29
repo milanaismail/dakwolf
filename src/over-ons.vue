@@ -1,5 +1,54 @@
 <script setup lang="ts">
 import { Check } from '@lucide/vue'
+import { useHead } from '@vueuse/head'
+import overOns400 from '@/assets/over-ons-400.webp'
+import overOns800 from '@/assets/over-ons-800.webp'
+import overOns1200 from '@/assets/over-ons-1200.webp'
+useHead({
+  title: 'Over ons | Dakwolf - Ervaren dakwerker in Leuven',
+
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Maak kennis met Dakwolf. Meer dan 12 jaar ervaring in dakwerken, isolatie en schilderwerken in Leuven en omgeving. Kwaliteit, vakmanschap en een nette afwerking staan centraal.',
+    },
+
+    {
+      name: 'keywords',
+      content:
+        'over Dakwolf, dakwerker Leuven, dakwerken Leuven, isolatie Leuven, schilderwerken Leuven, ervaren dakwerker, dakrenovatie Leuven',
+    },
+
+    {
+      property: 'og:title',
+      content: 'Over Dakwolf | Ervaren vakmanschap in Leuven',
+    },
+
+    {
+      property: 'og:description',
+      content:
+        'Ontdek wie Dakwolf is en waarom klanten kiezen voor meer dan 12 jaar ervaring, kwalitatieve afwerking en betrouwbare service.',
+    },
+
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+
+    {
+      property: 'og:url',
+      content: 'https://www.dakwolf.be/over-ons',
+    },
+  ],
+
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://www.dakwolf.be/over-ons',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -88,16 +137,16 @@ import { Check } from '@lucide/vue'
         </div>
         <div class="relative w-full h-64 md:h-full self-stretch">
           <img
+            :src="overOns800"
+            :srcset="`${overOns400} 400w, ${overOns800} 800w, ${overOns1200} 1200w`"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Over ons"
             class="absolute inset-0 w-full h-full object-cover"
-            src="./assets/over-ons.webp"
-            alt=""
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-</style>
